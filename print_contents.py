@@ -27,16 +27,18 @@ def clean_lyrics_file(lyrics_file, clean_file):
                 clean_file.write(line + '\n')
                 clean_lines.append(line)
 
+    return clean_lines
+
 
 for infile in glob.glob("JayZ/*.txt"):
     # stuff below goes here!
     lyricsf = open(infile)
     cleanf = open(infile + '.clean', 'w')
 
-    clean_lyrics_file(lyricsf, cleanf)
+    curr_clean_lines = clean_lyrics_file(lyricsf, cleanf)
 
     # Want to do...
-    # print("We got", len(clean_lines), "lines")
+    print("We got", len(curr_clean_lines), "lines")
 
     lyricsf.close()
     cleanf.close()
