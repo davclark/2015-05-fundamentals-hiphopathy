@@ -38,8 +38,8 @@ for infile in glob.glob("JayZ/*.txt"):
     # Want to do...
     # print("We got", len(clean_lines), "lines")
 
-    lyrics_file.close()
-    clean_file.close()
+    lyricsf.close()
+    cleanf.close()
 
 print("We're done!")
 
