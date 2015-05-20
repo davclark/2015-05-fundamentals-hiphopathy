@@ -79,8 +79,23 @@ print("Counts as strings:", counts_as_strings)
 #     d['3'] = []
 # d['3'].append(countstr)
 
+stem_leaf_data = {}
 for countstr in counts_as_strings:
-    print(countstr[:-1])
+    prefix = countstr[:-1]
+    if prefix not in stem_leaf_data:
+        stem_leaf_data[prefix] = []
+
+    stem_leaf_data[prefix].append(countstr[-1])
+
+print(stem_leaf_data)
+
+# We convert to ints again to get order, and back to strings to get 0-padding
+for k in sorted(int(val) for val in stem_leaf_data):
+    if k < 10:
+        to_print = '0' + str(k)
+    else:
+        to_print = str(k)
+    print(to_print, "|", ' '.join(stem_leaf_data[str(k)]))
 
 # Bonus challenge: also compute word count, character count
 # Number of occurrences of "a" and "the"
