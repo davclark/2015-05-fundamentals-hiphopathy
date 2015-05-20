@@ -38,12 +38,13 @@ for infile in glob.glob("JayZ/*.txt"):
     curr_clean_lines = clean_lyrics_file(lyricsf, cleanf)
 
     # Want to do...
+    # Change to add lines from each file to a list
     print("We got", len(curr_clean_lines), "lines")
 
     lyricsf.close()
     cleanf.close()
 
+# After we get all of our lines, with counts - make a plot
 print("We're done!")
 
-# TODO Replace [Chorus] with actual chorus text
 # At the end - example of accumulator
