@@ -55,6 +55,12 @@ for infile in all_files:
 # if all_lyrics:
 #    print("list is not empty!")
 print("Got", len(all_lyrics), "processed lyrics")
+
+# from all_lyrics, compute line_counts that are strings
+# Bonus challenge: also compute word count, character count
+# Number of occurrences of "a" and "the"
+
+
 print("We're done!")
 
 # At the end - example of accumulator
