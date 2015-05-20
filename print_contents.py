@@ -43,24 +43,49 @@ for infile in all_files:
     curr_clean_lines = clean_lyrics_file(lyricsf, cleanf)
     all_lyrics.append(curr_clean_lines)
 
-    # Want to do...
-    # Change to add lines from each file to a list
-    # print("We got", len(curr_clean_lines), "lines")
-
     lyricsf.close()
     cleanf.close()
 
-# After we get all of our lines, with counts - make a plot
-#print(all_lyrics)
 # if all_lyrics:
 #    print("list is not empty!")
 print("Got", len(all_lyrics), "processed lyrics")
 
 # from all_lyrics, compute line_counts that are strings
+
+line_counts = []
+lines_seen = 0
+for lyrics in all_lyrics:
+    num_lines = len(lyrics)
+    line_counts.append(num_lines)
+    lines_seen = lines_seen + num_lines
+
+print("here are counts:", line_counts)
+print("Lines seen:", lines_seen)
+print("Direct sum:", sum(line_counts))
+
+
+
+counts_as_strings = [str(count) for count in line_counts]
+print("Counts as strings:", counts_as_strings)
+
+# TODO Create a dictionary from counts_as_strings for a stem-and-leaf plot, e.g.:
+# {'7': ['71', ...], '5': ['52', ...], ...}
+
+# countstr = '39'
+# prefix = countstr[:-1]
+# d = {}
+# '3' in d
+# if '3' not in d:
+#     d['3'] = []
+# d['3'].append(countstr)
+
+for countstr in counts_as_strings:
+    print(countstr[:-1])
+
 # Bonus challenge: also compute word count, character count
 # Number of occurrences of "a" and "the"
 
 
+
 print("We're done!")
 
-# At the end - example of accumulator
